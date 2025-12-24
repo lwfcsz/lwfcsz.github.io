@@ -86,8 +86,7 @@
   <entry>
     <title>this is my first-博客文章-</title>
     <url>/2025/12/23/this-is-my-first-%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><!-- 随机欢迎语组件 - 同步显示，无延迟 -->
-<div id="welcome-container" style="
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="
   margin: 20px auto;
   padding: 15px 20px;
   max-width: 800px;
@@ -111,15 +110,12 @@
 </div>
 
 <script>
-  // 同步执行：页面解析到脚本时立即运行，无需等待加载事件
   (function() {
-    // 1. 时间时段判断（同步获取）
     const hour = new Date().getHours();
     const timePeriod = hour >= 6 && hour < 12 ? "早上好" : 
                        hour >= 12 && hour < 18 ? "下午好" : 
                        hour >= 18 && hour < 22 ? "晚上好" : "夜深了";
 
-    // 2. 欢迎语文案库（原有内容不变）
     const welcomeTextList = [
       `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
       `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
@@ -131,14 +127,12 @@
       `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
     ];
 
-    // 3. 随机获取文案并立即填充（同步渲染）
     const randomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
     const welcomeTextEl = document.getElementById("welcome-text");
     if (welcomeTextEl) {
-      welcomeTextEl.innerText = randomTxt; // 立即赋值，与div同步显示
+      welcomeTextEl.innerText = randomTxt; 
     }
 
-    // 4. 保留30秒自动切换功能（不影响初始同步显示）
     function switchWelcomeText() {
       const newRandomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
       if (welcomeTextEl) {
