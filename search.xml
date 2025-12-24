@@ -3,7 +3,37 @@
   <entry>
     <title>Hello World(测试版)</title>
     <url>/2025/12/23/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="margin:20px auto;padding:15px 20px;max-width:800px;background:linear-gradient(120deg,#fdfbfb 0%,#ebedee 100%);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);text-align:center;opacity:1;transition:opacity 0.8s ease;">
+  <div id="welcome-text" style="font-size:17px;color:#333;font-weight:500;"></div>
+  <div id="welcome-subtext" style="margin-top:8px;font-size:13px;color:#888;">—— 澄思竹的博客小站</div>
+</div>
+
+<script>
+(function(){
+  const hour = new Date().getHours();
+  const timePeriod = hour >=6 && hour <12 ? "早上好" : hour >=12 && hour <18 ? "下午好" : hour >=18 && hour <22 ? "晚上好" : "夜深了";
+  const welcomeTextList = [
+    `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
+    `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
+    `欢迎光临！${timePeriod}，愿你在这里能找到一点轻松和快乐～`,
+    `${timePeriod}！我是澄思竹，一枚爱技术、爱生活的广东大学生，很高兴遇见你～`,
+    `哈喽～${timePeriod}！快来看看我的校园趣事和技术探索日记吧～`,
+    `${timePeriod}！篮球场上的热血、音乐里的温柔，都能在这里找到踪迹～`,
+    `欢迎闯进我的小天地！${timePeriod}，一起记录普通但闪光的日常～`,
+    `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
+  ];
+  const welcomeTextEl = document.getElementById("welcome-text");
+  if(welcomeTextEl){
+    welcomeTextEl.innerText = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    setInterval(()=>{
+      welcomeTextEl.innerText = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    },30000);
+  }
+})();
+</script>
+
+
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -56,7 +86,71 @@
   <entry>
     <title>this is my first-博客文章-</title>
     <url>/2025/12/23/this-is-my-first-%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="我的第一篇博客文章：开启记录生活的新旅程"><a href="#我的第一篇博客文章：开启记录生活的新旅程" class="headerlink" title="我的第一篇博客文章：开启记录生活的新旅程"></a>我的第一篇博客文章：开启记录生活的新旅程</h1><p>今天是2025年的平安夜，终于搭好了自己的个人博客，这是我的第一篇文章。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><!-- 随机欢迎语组件 - 同步显示，无延迟 -->
+<div id="welcome-container" style="
+  margin: 20px auto;
+  padding: 15px 20px;
+  max-width: 800px;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  opacity: 1; /* 直接显示，无需等待动画触发 */
+  transition: opacity 0.8s ease; /* 保留渐变样式，不影响同步显示 */
+">
+  <div id="welcome-text" style="
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+  "></div>
+  <div id="welcome-subtext" style="
+    margin-top: 8px;
+    font-size: 13px;
+    color: #888;
+  ">—— 澄思竹的博客小站</div>
+</div>
+
+<script>
+  // 同步执行：页面解析到脚本时立即运行，无需等待加载事件
+  (function() {
+    // 1. 时间时段判断（同步获取）
+    const hour = new Date().getHours();
+    const timePeriod = hour >= 6 && hour < 12 ? "早上好" : 
+                       hour >= 12 && hour < 18 ? "下午好" : 
+                       hour >= 18 && hour < 22 ? "晚上好" : "夜深了";
+
+    // 2. 欢迎语文案库（原有内容不变）
+    const welcomeTextList = [
+      `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
+      `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
+      `欢迎光临！${timePeriod}，愿你在这里能找到一点轻松和快乐～`,
+      `${timePeriod}！我是澄思竹，一枚爱技术、爱生活的广东大学生，很高兴遇见你～`,
+      `哈喽～${timePeriod}！快来看看我的校园趣事和技术探索日记吧～`,
+      `${timePeriod}！篮球场上的热血、音乐里的温柔，都能在这里找到踪迹～`,
+      `欢迎闯进我的小天地！${timePeriod}，一起记录普通但闪光的日常～`,
+      `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
+    ];
+
+    // 3. 随机获取文案并立即填充（同步渲染）
+    const randomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    const welcomeTextEl = document.getElementById("welcome-text");
+    if (welcomeTextEl) {
+      welcomeTextEl.innerText = randomTxt; // 立即赋值，与div同步显示
+    }
+
+    // 4. 保留30秒自动切换功能（不影响初始同步显示）
+    function switchWelcomeText() {
+      const newRandomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+      if (welcomeTextEl) {
+        welcomeTextEl.innerText = newRandomTxt;
+      }
+    }
+    setInterval(switchWelcomeText, 30000);
+  })();
+</script>
+
+
+<h1 id="我的第一篇博客文章：开启记录生活的新旅程"><a href="#我的第一篇博客文章：开启记录生活的新旅程" class="headerlink" title="我的第一篇博客文章：开启记录生活的新旅程"></a>我的第一篇博客文章：开启记录生活的新旅程</h1><p>今天是2025年的平安夜，终于搭好了自己的个人博客，这是我的第一篇文章。</p>
 <p>其实想写博客的念头已经存在很久了——总觉得生活里有很多值得记录的瞬间：比如偶然发现的一首好歌、踩坑后搞定的一个小技术问题、或是某个突然想通的生活感悟。以前习惯存在备忘录里，但总觉得少了点「分享」的温度，于是干脆搭了个博客，把这些碎片都好好存起来。</p>
 <h2 id="为什么要写博客？"><a href="#为什么要写博客？" class="headerlink" title="为什么要写博客？"></a>为什么要写博客？</h2><p>对我来说，写博客的意义大概有三个：</p>
 <ol>
