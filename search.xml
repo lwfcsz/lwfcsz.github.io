@@ -16,7 +16,42 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+<!-- 一言随机句子组件 - 带样式适配Butterfly主题 -->
+<div id="hitokoto-container" style="
+  margin: 15px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+">
+  <div id="hitokoto-text">正在加载一句美好的话...</div>
+  <div id="hitokoto-from" style="margin-top: 8px; color: #888; font-size: 12px;"></div>
+</div>
+
+<script>
+  // 调用一言API获取随机句子
+  function getHitokoto() {
+    fetch('https://v1.hitokoto.cn/')
+      .then(response => response.json())
+      .then(data => {
+        // 填充句子内容
+        document.getElementById('hitokoto-text').innerText = `"${data.hitokoto}"`;
+        // 填充来源（如果有）
+        let fromText = data.from ? `—— ${data.from}` : '';
+        document.getElementById('hitokoto-from').innerText = fromText;
+      })
+      .catch(() => {
+        document.getElementById('hitokoto-text').innerText = "愿你今天也有好心情～";
+      });
+  }
+
+  // 页面加载时执行
+  window.onload = getHitokoto;
+  // 可选：30秒自动刷新一句
+  setInterval(getHitokoto, 30000);
+</script>]]></content>
   </entry>
   <entry>
     <title>this is my first-博客文章-</title>
@@ -37,7 +72,42 @@
 <li>看过的书、听过的歌、去过的地方的分享。</li>
 </ul>
 <p>最后，希望这个小小的博客能陪我走得久一点~ 也欢迎看到这篇文章的你，在评论区留下你的脚印<del>（虽然评论区暂时还没有搞定（会搞定的哈</del>））</p>
-]]></content>
+<!-- 一言随机句子组件 - 带样式适配Butterfly主题 -->
+<div id="hitokoto-container" style="
+  margin: 15px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+">
+  <div id="hitokoto-text">正在加载一句美好的话...</div>
+  <div id="hitokoto-from" style="margin-top: 8px; color: #888; font-size: 12px;"></div>
+</div>
+
+<script>
+  // 调用一言API获取随机句子
+  function getHitokoto() {
+    fetch('https://v1.hitokoto.cn/')
+      .then(response => response.json())
+      .then(data => {
+        // 填充句子内容
+        document.getElementById('hitokoto-text').innerText = `"${data.hitokoto}"`;
+        // 填充来源（如果有）
+        let fromText = data.from ? `—— ${data.from}` : '';
+        document.getElementById('hitokoto-from').innerText = fromText;
+      })
+      .catch(() => {
+        document.getElementById('hitokoto-text').innerText = "愿你今天也有好心情～";
+      });
+  }
+
+  // 页面加载时执行
+  window.onload = getHitokoto;
+  // 可选：30秒自动刷新一句
+  setInterval(getHitokoto, 30000);
+</script>]]></content>
       <categories>
         <category>生活记录</category>
       </categories>
