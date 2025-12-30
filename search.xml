@@ -207,7 +207,64 @@
   <entry>
     <title>2025年末时事新闻速览</title>
     <url>/2025/12/30/2025-12-30-%E6%88%91%E7%9A%84%E6%96%B0%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="2025年末时事新闻速览"><a href="#2025年末时事新闻速览" class="headerlink" title="2025年末时事新闻速览"></a>2025年末时事新闻速览</h1><h2 id="一、国内民生热点"><a href="#一、国内民生热点" class="headerlink" title="一、国内民生热点"></a>一、国内民生热点</h2><ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="
+  margin: 20px auto;
+  padding: 15px 20px;
+  max-width: 800px;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  opacity: 1; /* 直接显示，无需等待动画触发 */
+  transition: opacity 0.8s ease; /* 保留渐变样式，不影响同步显示 */
+">
+  <div id="welcome-text" style="
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+  "></div>
+  <div id="welcome-subtext" style="
+    margin-top: 8px;
+    font-size: 13px;
+    color: #888;
+  ">—— 澄思竹的博客小站</div>
+</div>
+
+<script>
+  (function() {
+    const hour = new Date().getHours();
+    const timePeriod = hour >= 6 && hour < 12 ? "早上好" : 
+                       hour >= 12 && hour < 18 ? "下午好" : 
+                       hour >= 18 && hour < 22 ? "晚上好" : "夜深了";
+
+    const welcomeTextList = [
+      `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
+      `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
+      `欢迎光临！${timePeriod}，愿你在这里能找到一点轻松和快乐～`,
+      `${timePeriod}！我是澄思竹，一枚爱技术、爱生活的广东大学生，很高兴遇见你～`,
+      `哈喽～${timePeriod}！快来看看我的校园趣事和技术探索日记吧～`,
+      `${timePeriod}！篮球场上的热血、音乐里的温柔，都能在这里找到踪迹～`,
+      `欢迎闯进我的小天地！${timePeriod}，一起记录普通但闪光的日常～`,
+      `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
+    ];
+
+    const randomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    const welcomeTextEl = document.getElementById("welcome-text");
+    if (welcomeTextEl) {
+      welcomeTextEl.innerText = randomTxt; 
+    }
+
+    function switchWelcomeText() {
+      const newRandomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+      if (welcomeTextEl) {
+        welcomeTextEl.innerText = newRandomTxt;
+      }
+    }
+    setInterval(switchWelcomeText, 30000);
+  })();
+</script>
+
+<h1 id="2025年末时事新闻速览"><a href="#2025年末时事新闻速览" class="headerlink" title="2025年末时事新闻速览"></a>2025年末时事新闻速览</h1><h2 id="一、国内民生热点"><a href="#一、国内民生热点" class="headerlink" title="一、国内民生热点"></a>一、国内民生热点</h2><ul>
 <li>弹性退休制度全面落地，适配不同群体工作养老需求</li>
 <li>普惠育儿补贴全国推行，育儿家庭经济压力缓解</li>
 <li>住房租赁条例正式施行，保障2亿租房人群权益</li>
