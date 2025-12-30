@@ -293,4 +293,132 @@
         <tag>全球动态</tag>
       </tags>
   </entry>
+  <entry>
+    <title>读《梨花的呼唤》：那枝永不凋零的白</title>
+    <url>/2025/12/30/%E4%BB%8A%E6%97%A5%E6%8E%A8%E8%8D%90%E4%BD%9C%E6%96%87/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="
+  margin: 20px auto;
+  padding: 15px 20px;
+  max-width: 800px;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  opacity: 1; /* 直接显示，无需等待动画触发 */
+  transition: opacity 0.8s ease; /* 保留渐变样式，不影响同步显示 */
+">
+  <div id="welcome-text" style="
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+  "></div>
+  <div id="welcome-subtext" style="
+    margin-top: 8px;
+    font-size: 13px;
+    color: #888;
+  ">—— 澄思竹的博客小站</div>
+</div>
+
+<script>
+  (function() {
+    const hour = new Date().getHours();
+    const timePeriod = hour >= 6 && hour < 12 ? "早上好" : 
+                       hour >= 12 && hour < 18 ? "下午好" : 
+                       hour >= 18 && hour < 22 ? "晚上好" : "夜深了";
+
+    const welcomeTextList = [
+      `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
+      `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
+      `欢迎光临！${timePeriod}，愿你在这里能找到一点轻松和快乐～`,
+      `${timePeriod}！我是澄思竹，一枚爱技术、爱生活的广东大学生，很高兴遇见你～`,
+      `哈喽～${timePeriod}！快来看看我的校园趣事和技术探索日记吧～`,
+      `${timePeriod}！篮球场上的热血、音乐里的温柔，都能在这里找到踪迹～`,
+      `欢迎闯进我的小天地！${timePeriod}，一起记录普通但闪光的日常～`,
+      `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
+    ];
+
+    const randomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    const welcomeTextEl = document.getElementById("welcome-text");
+    if (welcomeTextEl) {
+      welcomeTextEl.innerText = randomTxt; 
+    }
+
+    function switchWelcomeText() {
+      const newRandomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+      if (welcomeTextEl) {
+        welcomeTextEl.innerText = newRandomTxt;
+      }
+    }
+    setInterval(switchWelcomeText, 30000);
+  })();
+</script>
+
+<h1 id="读《梨花的呼唤》：那枝永不凋零的白"><a href="#读《梨花的呼唤》：那枝永不凋零的白" class="headerlink" title="读《梨花的呼唤》：那枝永不凋零的白"></a>读《梨花的呼唤》：那枝永不凋零的白</h1><p>今天想和大家分享一篇让我鼻尖发酸的文章——林紫妍的《梨花的呼唤》，文字里裹着的温柔与遗憾，像梨花香一样，轻轻绕在心里。</p>
+<h2 id="文章原文：《梨花的呼唤》"><a href="#文章原文：《梨花的呼唤》" class="headerlink" title="文章原文：《梨花的呼唤》"></a>文章原文：《梨花的呼唤》</h2><pre><code> “梨花繁繁压枝头，一枝梨花印白头……”我私藏了一枝梨花，洁白的、神圣的、永不凋零的。
+   外婆总牵着我的手，喊着最亲昵的乳名，陪我抬头细数院子里那棵梨树的清艳。冬的尽头，春之伊始，梨花似乎听到了生的呼唤，一夜之间便开满枝头。“杏花黄，梨花白……”枝头上的那一抹白，圣洁得不像是从泥土里长出来的。外婆总坐在梨树下的摇木椅上，望着年幼的我在院子里、梨树旁尽情玩闹。而我最期待的，却是橘色的秋——脆生生的秋梨压得梨树喘不过气，外婆总会替它减轻“负担”，小心翼翼地采摘，满眼慈爱地看着我吃得口角流涎，也只会笑嗔一声“小花猫”。
+   到了上学的年纪，我便随着父母去了城市读书。城市的节奏比乡下快上几倍，我总觉得空气太沉闷，环境太复杂，生活太枯燥。外婆知道后，只是紧皱着好看的眉，同那洁白的梨花般沉默不语。一日，我突然收到了一份来自家乡的包裹，打开来，一箱罐头瓶整齐排列，里面装满了橙蜜色的秋梨膏，还有一封摊平了、不再卷舒的信：“囡囡，做成秋梨膏，你好冲水喝，甜的，你最喜欢。”风裹着梨花香吹到遥远的城市，沾着点泥土的气息，提醒着漂泊的孩子别被繁华迷了眼。我珍藏的，是那陪伴我度过无数劳累夜晚的秋梨膏，更是那张写着不太清晰、带着些许慌乱字迹的信纸。
+   春已至，正在上学的我突然被父母接走。梨花开，春带雨；梨花落，春入泥。院子里再也不见外婆忙碌的身影，家中长辈的愁思已爬上青丝。我望着那棵似是佝偻着身子的梨树，明明是繁花盛放的季节，可那凋落的一抹白，却直撞我的眼眶，撞得生疼。家里的秋梨膏还没喝完，我再也不舍得冲开下一罐。外婆，我曾说过要让你做最幸福的人，带你看最美的梨花，可我再也牵不到你的手了。吹落梨花的风，似乎也没打算等我。那个我想去拥抱的背影，在春日的剪影里，碎在了梨花树下。我好像，错过了最后一枝梨花……
+   次年，我又回到小院。梨花开得正盛，胜过以往任何一年，只是树下再也不见那个温柔的老人。外婆，又是一年梨花开遍，我多想握住你的手，即便满手老茧；我多想再听一遍你的呼唤，即便天人永隔。
+</code></pre>
+<h2 id="文字里的温柔与遗憾"><a href="#文字里的温柔与遗憾" class="headerlink" title="文字里的温柔与遗憾"></a>文字里的温柔与遗憾</h2><p>这篇文章最戳人的，是<strong>用“梨花”串起的牵挂</strong>：</p>
+<ul>
+<li>开头的“永不凋零的梨花”，是外婆的陪伴；</li>
+<li>城市里收到的秋梨膏，是泥土气息裹着的惦念；</li>
+<li>最后“碎在梨花树下的背影”，是来不及兑现的承诺。</li>
+</ul>
+<p>最让我心头一紧的细节，是“摊平了、不再卷舒的信”——外婆写这封信时，大概是仔仔细细抚平了褶皱，像她小心翼翼摘梨的样子；还有“再也不舍得冲开的秋梨膏”，那罐里装的哪里是甜，是不敢碰的想念。</p>
+<h2 id="读罢的小感触"><a href="#读罢的小感触" class="headerlink" title="读罢的小感触"></a>读罢的小感触</h2><p>原来最动人的文字，从不是华丽的辞藻，是把“梨花”“秋梨膏”“摇木椅”这些日常的物件，变成藏着爱的符号。外婆的沉默、慌乱的字迹、凋落的梨花，每一处都在说“我在想你”，也在说“来不及了”。</p>
+<p>这枝“永不凋零的梨花”，是作者私藏的思念，也让每个读过的人，想起自己心里那抹舍不得放下的白。</p>
+<!-- 极简装饰 -->
+<div style="margin:15px 0;padding:10px;background:#f5f5f5;border-radius:6px;text-align:center;">
+  <span>有些牵挂，会像梨花一样，年年开在心里。</span>
+</div>
+
+
+
+<!-- 一言随机句子组件 - 带样式适配Butterfly主题 -->
+<div id="hitokoto-container" style="
+  margin: 15px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+">
+  <div id="hitokoto-text">正在加载一句美好的话...</div>
+  <div id="hitokoto-from" style="margin-top: 8px; color: #888; font-size: 12px;"></div>
+</div>
+
+<script>
+  // 调用一言API获取随机句子
+  function getHitokoto() {
+    fetch('https://v1.hitokoto.cn/')
+      .then(response => response.json())
+      .then(data => {
+        // 填充句子内容
+        document.getElementById('hitokoto-text').innerText = `"${data.hitokoto}"`;
+        // 填充来源（如果有）
+        let fromText = data.from ? `—— ${data.from}` : '';
+        document.getElementById('hitokoto-from').innerText = fromText;
+      })
+      .catch(() => {
+        document.getElementById('hitokoto-text').innerText = "愿你今天也有好心情～";
+      });
+  }
+
+  // 页面加载时执行
+  window.onload = getHitokoto;
+  // 可选：30秒自动刷新一句
+  setInterval(getHitokoto, 30000);
+</script>]]></content>
+      <categories>
+        <category>阅读感悟</category>
+      </categories>
+      <tags>
+        <tag>文章分享</tag>
+        <tag>情感随笔</tag>
+        <tag>文字细读</tag>
+      </tags>
+  </entry>
 </search>
