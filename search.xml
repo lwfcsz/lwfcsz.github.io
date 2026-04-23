@@ -1,210 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World(测试版)</title>
-    <url>/2025/12/23/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="margin:20px auto;padding:15px 20px;max-width:800px;background:linear-gradient(120deg,#fdfbfb 0%,#ebedee 100%);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);text-align:center;opacity:1;transition:opacity 0.8s ease;">
-  <div id="welcome-text" style="font-size:17px;color:#333;font-weight:500;"></div>
-  <div id="welcome-subtext" style="margin-top:8px;font-size:13px;color:#888;">—— 澄思竹的博客小站</div>
-</div>
-
-<script>
-(function(){
-  const hour = new Date().getHours();
-  const timePeriod = hour >=6 && hour <12 ? "早上好" : hour >=12 && hour <18 ? "下午好" : hour >=18 && hour <22 ? "晚上好" : "夜深了";
-  const welcomeTextList = [
-    `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
-    `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
-    `欢迎光临！${timePeriod}，愿你在这里能找到一点轻松和快乐～`,
-    `${timePeriod}！我是澄思竹，一枚爱技术、爱生活的广东大学生，很高兴遇见你～`,
-    `哈喽～${timePeriod}！快来看看我的校园趣事和技术探索日记吧～`,
-    `${timePeriod}！篮球场上的热血、音乐里的温柔，都能在这里找到踪迹～`,
-    `欢迎闯进我的小天地！${timePeriod}，一起记录普通但闪光的日常～`,
-    `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
-  ];
-  const welcomeTextEl = document.getElementById("welcome-text");
-  if(welcomeTextEl){
-    welcomeTextEl.innerText = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
-    setInterval(()=>{
-      welcomeTextEl.innerText = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
-    },30000);
-  }
-})();
-</script>
-
-
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<!-- 一言随机句子组件 - 带样式适配Butterfly主题 -->
-<div id="hitokoto-container" style="
-  margin: 15px 0;
-  padding: 12px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #333;
-  text-align: center;
-">
-  <div id="hitokoto-text">正在加载一句美好的话...</div>
-  <div id="hitokoto-from" style="margin-top: 8px; color: #888; font-size: 12px;"></div>
-</div>
-
-<script>
-  // 调用一言API获取随机句子
-  function getHitokoto() {
-    fetch('https://v1.hitokoto.cn/')
-      .then(response => response.json())
-      .then(data => {
-        // 填充句子内容
-        document.getElementById('hitokoto-text').innerText = `"${data.hitokoto}"`;
-        // 填充来源（如果有）
-        let fromText = data.from ? `—— ${data.from}` : '';
-        document.getElementById('hitokoto-from').innerText = fromText;
-      })
-      .catch(() => {
-        document.getElementById('hitokoto-text').innerText = "愿你今天也有好心情～";
-      });
-  }
-
-  // 页面加载时执行
-  window.onload = getHitokoto;
-  // 可选：30秒自动刷新一句
-  setInterval(getHitokoto, 30000);
-</script>]]></content>
-  </entry>
-  <entry>
-    <title>this is my first-博客文章-</title>
-    <url>/2025/12/23/this-is-my-first-%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="
-  margin: 20px auto;
-  padding: 15px 20px;
-  max-width: 800px;
-  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  text-align: center;
-  opacity: 1; /* 直接显示，无需等待动画触发 */
-  transition: opacity 0.8s ease; /* 保留渐变样式，不影响同步显示 */
-">
-  <div id="welcome-text" style="
-    font-size: 17px;
-    color: #333;
-    font-weight: 500;
-  "></div>
-  <div id="welcome-subtext" style="
-    margin-top: 8px;
-    font-size: 13px;
-    color: #888;
-  ">—— 澄思竹的博客小站</div>
-</div>
-
-<script>
-  (function() {
-    const hour = new Date().getHours();
-    const timePeriod = hour >= 6 && hour < 12 ? "早上好" : 
-                       hour >= 12 && hour < 18 ? "下午好" : 
-                       hour >= 18 && hour < 22 ? "晚上好" : "夜深了";
-
-    const welcomeTextList = [
-      `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
-      `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
-      `欢迎光临！${timePeriod}，愿你在这里能找到一点轻松和快乐～`,
-      `${timePeriod}！我是澄思竹，一枚爱技术、爱生活的广东大学生，很高兴遇见你～`,
-      `哈喽～${timePeriod}！快来看看我的校园趣事和技术探索日记吧～`,
-      `${timePeriod}！篮球场上的热血、音乐里的温柔，都能在这里找到踪迹～`,
-      `欢迎闯进我的小天地！${timePeriod}，一起记录普通但闪光的日常～`,
-      `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
-    ];
-
-    const randomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
-    const welcomeTextEl = document.getElementById("welcome-text");
-    if (welcomeTextEl) {
-      welcomeTextEl.innerText = randomTxt; 
-    }
-
-    function switchWelcomeText() {
-      const newRandomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
-      if (welcomeTextEl) {
-        welcomeTextEl.innerText = newRandomTxt;
-      }
-    }
-    setInterval(switchWelcomeText, 30000);
-  })();
-</script>
-
-
-<h1 id="我的第一篇博客文章：开启记录生活的新旅程"><a href="#我的第一篇博客文章：开启记录生活的新旅程" class="headerlink" title="我的第一篇博客文章：开启记录生活的新旅程"></a>我的第一篇博客文章：开启记录生活的新旅程</h1><p>今天是2025年的平安夜，终于搭好了自己的个人博客，这是我的第一篇文章。</p>
-<p>其实想写博客的念头已经存在很久了——总觉得生活里有很多值得记录的瞬间：比如偶然发现的一首好歌、踩坑后搞定的一个小技术问题、或是某个突然想通的生活感悟。以前习惯存在备忘录里，但总觉得少了点「分享」的温度，于是干脆搭了个博客，把这些碎片都好好存起来。</p>
-<h2 id="为什么要写博客？"><a href="#为什么要写博客？" class="headerlink" title="为什么要写博客？"></a>为什么要写博客？</h2><p>对我来说，写博客的意义大概有三个：</p>
-<ol>
-<li><strong>记录成长</strong>：把学到的知识、踩过的坑写成文字，既是梳理也是沉淀；</li>
-<li><strong>保持输出</strong>：强迫自己把想法落地成文字，避免「想过即会过」的惰性；</li>
-<li><strong>连接同频的人</strong>：如果我的文字能给某个陌生人一点启发，那就是意外的惊喜啦~</li>
-</ol>
-<h2 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h2><p>这个博客是用Hexo+Butterfly主题搭的，虽然过程中踩了不少坑（比如评论功能折腾了好久），但看到最终成型的页面时，还是挺有成就感的。</p>
-<p>后续这里会更新什么内容呢？大概是：</p>
-<ul>
-<li>生活日常的碎碎念；</li>
-<li>偶尔的技术学习笔记；</li>
-<li>看过的书、听过的歌、去过的地方的分享。</li>
-</ul>
-<p>最后，希望这个小小的博客能陪我走得久一点~ 也欢迎看到这篇文章的你，在评论区留下你的脚印<del>（虽然评论区暂时还没有搞定（会搞定的哈</del>））</p>
-<!-- 一言随机句子组件 - 带样式适配Butterfly主题 -->
-<div id="hitokoto-container" style="
-  margin: 15px 0;
-  padding: 12px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #333;
-  text-align: center;
-">
-  <div id="hitokoto-text">正在加载一句美好的话...</div>
-  <div id="hitokoto-from" style="margin-top: 8px; color: #888; font-size: 12px;"></div>
-</div>
-
-<script>
-  // 调用一言API获取随机句子
-  function getHitokoto() {
-    fetch('https://v1.hitokoto.cn/')
-      .then(response => response.json())
-      .then(data => {
-        // 填充句子内容
-        document.getElementById('hitokoto-text').innerText = `"${data.hitokoto}"`;
-        // 填充来源（如果有）
-        let fromText = data.from ? `—— ${data.from}` : '';
-        document.getElementById('hitokoto-from').innerText = fromText;
-      })
-      .catch(() => {
-        document.getElementById('hitokoto-text').innerText = "愿你今天也有好心情～";
-      });
-  }
-
-  // 页面加载时执行
-  window.onload = getHitokoto;
-  // 可选：30秒自动刷新一句
-  setInterval(getHitokoto, 30000);
-</script>]]></content>
-      <categories>
-        <category>生活记录</category>
-      </categories>
-      <tags>
-        <tag>博客初体验</tag>
-        <tag>个人成长</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2025年末时事新闻速览</title>
     <url>/2025/12/30/2025-12-30-%E6%88%91%E7%9A%84%E6%96%B0%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="
@@ -291,6 +87,328 @@
         <tag>时事新闻</tag>
         <tag>2025盘点</tag>
         <tag>全球动态</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>普通大学生的日常｜平淡日子里也藏着温柔与热爱</title>
+    <url>/2026/04/23/%E4%BB%8A%E6%97%A5%E7%90%90%E4%BA%8B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="
+  margin: 20px auto;
+  padding: 15px 20px;
+  max-width: 800px;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+">
+  <div id="welcome-text" style="
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+  "></div>
+  <div id="welcome-subtext" style="
+    margin-top: 8px;
+    font-size: 13px;
+    color: #888;
+  ">—— 澄思竹的博客小站</div>
+</div>
+
+<script>
+  (function() {
+    const hour = new Date().getHours();
+    const timePeriod = hour >= 6 && hour < 12 ? "早上好" : 
+                       hour >= 12 && hour < 18 ? "下午好" : 
+                       hour >= 18 && hour < 22 ? "晚上好" : "夜深了";
+
+    const welcomeTextList = [
+      `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和生活碎碎念～`,
+      `嗨～${timePeriod}！一起感受简简单单的大学生活吧～`,
+      `欢迎光临！${timePeriod}，愿我们都能好好热爱平凡日常～`,
+      `${timePeriod}！普通大学生的小世界，简单、安静又治愈～`,
+      `哈喽～${timePeriod}！记录校园点滴，收藏每一份小美好～`
+    ];
+
+    const randomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    const welcomeTextEl = document.getElementById("welcome-text");
+    if (welcomeTextEl) {
+      welcomeTextEl.innerText = randomTxt; 
+    }
+
+    function switchWelcomeText() {
+      const newRandomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+      if (welcomeTextEl) {
+        welcomeTextEl.innerText = newRandomTxt;
+      }
+    }
+    setInterval(switchWelcomeText, 30000);
+  })();
+</script>
+
+<h1 id="普通大学生的日常｜平淡日子里，慢慢生活"><a href="#普通大学生的日常｜平淡日子里，慢慢生活" class="headerlink" title="普通大学生的日常｜平淡日子里，慢慢生活"></a>普通大学生的日常｜平淡日子里，慢慢生活</h1><p>大学生的生活，没有想象中的轰轰烈烈，<br>更多的是平平淡淡、按时上课、认真生活，<br>在日复一日的校园节奏里，慢慢长大，慢慢自愈。</p>
+<h2 id="清晨：早八开启忙碌的一天"><a href="#清晨：早八开启忙碌的一天" class="headerlink" title="清晨：早八开启忙碌的一天"></a>清晨：早八开启忙碌的一天</h2><p>对于大多数大学生来说，一天总是被早八唤醒。<br>匆匆起床、简单洗漱，赶去教学楼上课，<br>走廊里挤满赶路的同学，清晨的风很安静，<br>阳光透过树叶洒在校园路上，温柔又治愈。</p>
+<p>课堂上认真听讲、偶尔走神、偶尔记笔记，<br>不算忙碌，却填满了一整个上午的时光，<br>这就是大学生最真实、最普通的日常。</p>
+<h2 id="中午：食堂干饭，简单又满足"><a href="#中午：食堂干饭，简单又满足" class="headerlink" title="中午：食堂干饭，简单又满足"></a>中午：食堂干饭，简单又满足</h2><p>下课之后，最期待的就是食堂干饭时刻。<br>五花八门的饭菜、平价又饱腹，<br>和朋友一起排队、一起吃饭、一起聊天，<br>琐碎的烦恼，总能在一顿午饭里悄悄化解。</p>
+<p>饭后回宿舍短暂休息，刷刷手机、听听歌，<br>短暂放空自己，为下午的课程充好电。</p>
+<h2 id="下午：课程、自习与自由时光"><a href="#下午：课程、自习与自由时光" class="headerlink" title="下午：课程、自习与自由时光"></a>下午：课程、自习与自由时光</h2><p>下午的课时而轻松，时而紧凑。<br>没课的时候，可以去图书馆自习、写写作业，<br>也可以在操场散步、吹吹风、看看晚霞，<br>大学生最好的地方，就是拥有很多自由支配的时间。</p>
+<p>不用被生活催促，不用被压力裹挟，<br>可以慢慢学习，慢慢进步，慢慢成为更好的自己。</p>
+<h2 id="傍晚：校园晚霞，是每天的小惊喜"><a href="#傍晚：校园晚霞，是每天的小惊喜" class="headerlink" title="傍晚：校园晚霞，是每天的小惊喜"></a>傍晚：校园晚霞，是每天的小惊喜</h2><p>傍晚的校园，永远藏着最美的风景。<br>橘红色的晚霞、温柔的晚风、热闹的操场，<br>有人跑步、有人打球、有人散步聊天，<br>平凡的校园傍晚，总能治愈一整天的疲惫。</p>
+<p>偶尔约上朋友逛逛校园、买点小零食，<br>简简单单的陪伴，就是大学生最简单的快乐。</p>
+<h2 id="夜晚：宿舍日常，松弛又自在"><a href="#夜晚：宿舍日常，松弛又自在" class="headerlink" title="夜晚：宿舍日常，松弛又自在"></a>夜晚：宿舍日常，松弛又自在</h2><p>夜晚的宿舍，才是一天最放松的时刻。<br>写完当天作业，整理好琐事，<br>追剧、听歌、聊天、玩玩爱好，<br>卸下一天的疲惫，享受属于自己的安静时光。</p>
+<p>没有轰轰烈烈，只有安稳自在，<br>熬夜偶尔有，早睡也常有，<br>普通大学生，都在好好过日子。</p>
+<h2 id="写在最后：平凡日常，也值得被记录"><a href="#写在最后：平凡日常，也值得被记录" class="headerlink" title="写在最后：平凡日常，也值得被记录"></a>写在最后：平凡日常，也值得被记录</h2><p>我们都是普通的大学生，<br>没有闪闪发光的人生，只有踏踏实实的日常。<br>上课、干饭、散步、努力、成长，<br>日子看似重复，却每天都有不一样的小美好。</p>
+<p>认真生活，好好热爱，<br>在平淡的校园时光里，慢慢发光。</p>
+<!-- 极简装饰 -->
+<div style="margin:15px 0;padding:10px;background:#f5f5f5;border-radius:6px;text-align:center;">
+  <span>好好生活，就是大学生最好的状态～</span>
+</div>
+
+<!-- 一言随机句子组件 -->
+<div id="hitokoto-container" style="
+  margin: 15px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+">
+  <div id="hitokoto-text">正在加载一句美好的话...</div>
+  <div id="hitokoto-from" style="margin-top: 8px; color: #888; font-size: 12px;"></div>
+</div>
+
+<script>
+  function getHitokoto() {
+    fetch('https://v1.hitokoto.cn/')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('hitokoto-text').innerText = `"${data.hitokoto}"`;
+        let fromText = data.from ? `—— ${data.from}` : '';
+        document.getElementById('hitokoto-from').innerText = fromText;
+      })
+      .catch(() => {
+        document.getElementById('hitokoto-text').innerText = "愿你日日开心，岁岁安然～";
+      });
+  }
+  window.onload = getHitokoto;
+  setInterval(getHitokoto, 30000);
+</script>]]></content>
+      <categories>
+        <category>生活随笔</category>
+      </categories>
+      <tags>
+        <tag>生活日常</tag>
+        <tag>大学生</tag>
+        <tag>校园日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World(测试版)</title>
+    <url>/2025/12/23/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="margin:20px auto;padding:15px 20px;max-width:800px;background:linear-gradient(120deg,#fdfbfb 0%,#ebedee 100%);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);text-align:center;opacity:1;transition:opacity 0.8s ease;">
+  <div id="welcome-text" style="font-size:17px;color:#333;font-weight:500;"></div>
+  <div id="welcome-subtext" style="margin-top:8px;font-size:13px;color:#888;">—— 澄思竹的博客小站</div>
+</div>
+
+<script>
+(function(){
+  const hour = new Date().getHours();
+  const timePeriod = hour >=6 && hour <12 ? "早上好" : hour >=12 && hour <18 ? "下午好" : hour >=18 && hour <22 ? "晚上好" : "夜深了";
+  const welcomeTextList = [
+    `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
+    `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
+    `欢迎光临！${timePeriod}，愿你在这里能找到一点轻松和快乐～`,
+    `${timePeriod}！我是澄思竹，一枚爱技术、爱生活的广东大学生，很高兴遇见你～`,
+    `哈喽～${timePeriod}！快来看看我的校园趣事和技术探索日记吧～`,
+    `${timePeriod}！篮球场上的热血、音乐里的温柔，都能在这里找到踪迹～`,
+    `欢迎闯进我的小天地！${timePeriod}，一起记录普通但闪光的日常～`,
+    `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
+  ];
+  const welcomeTextEl = document.getElementById("welcome-text");
+  if(welcomeTextEl){
+    welcomeTextEl.innerText = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    setInterval(()=>{
+      welcomeTextEl.innerText = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    },30000);
+  }
+})();
+</script>
+
+
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<!-- 一言随机句子组件 - 带样式适配Butterfly主题 -->
+<div id="hitokoto-container" style="
+  margin: 15px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+">
+  <div id="hitokoto-text">正在加载一句美好的话...</div>
+  <div id="hitokoto-from" style="margin-top: 8px; color: #888; font-size: 12px;"></div>
+</div>
+
+<script>
+  // 调用一言API获取随机句子
+  function getHitokoto() {
+    fetch('https://v1.hitokoto.cn/')
+      .then(response => response.json())
+      .then(data => {
+        // 填充句子内容
+        document.getElementById('hitokoto-text').innerText = `"${data.hitokoto}"`;
+        // 填充来源（如果有）
+        let fromText = data.from ? `—— ${data.from}` : '';
+        document.getElementById('hitokoto-from').innerText = fromText;
+      })
+      .catch(() => {
+        document.getElementById('hitokoto-text').innerText = "愿你今天也有好心情～";
+      });
+  }
+
+  // 页面加载时执行
+  window.onload = getHitokoto;
+  // 可选：30秒自动刷新一句
+  setInterval(getHitokoto, 30000);
+</script>]]></content>
+  </entry>
+  <entry>
+    <title>是pokect3好还是action系列更符合 欢迎来到我的理解 我们的最佳选择</title>
+    <url>/2026/01/06/%E6%98%AFpokect3%E5%A5%BD%E8%BF%98%E6%98%AFaction%E7%B3%BB%E5%88%97%E6%9B%B4%E7%AC%A6%E5%90%88-%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E7%90%86%E8%A7%A3-%E6%88%91%E4%BB%AC%E7%9A%84%E6%9C%80%E4%BD%B3%E9%80%89%E6%8B%A9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="
+  margin: 20px auto;
+  padding: 15px 20px;
+  max-width: 800px;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  opacity: 1; /* 直接显示，无需等待动画触发 */
+  transition: opacity 0.8s ease; /* 保留渐变样式，不影响同步显示 */
+">
+  <div id="welcome-text" style="
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+  "></div>
+  <div id="welcome-subtext" style="
+    margin-top: 8px;
+    font-size: 13px;
+    color: #888;
+  ">—— 澄思竹的博客小站</div>
+</div>
+
+<script>
+  (function() {
+    const hour = new Date().getHours();
+    const timePeriod = hour >= 6 && hour < 12 ? "早上好" : 
+                       hour >= 12 && hour < 18 ? "下午好" : 
+                       hour >= 18 && hour < 22 ? "晚上好" : "夜深了";
+
+    const welcomeTextList = [
+      `${timePeriod}！欢迎来到澄思竹的博客，这里有校园日常和技术碎碎念～`,
+      `嗨～${timePeriod}！要不要和我聊聊篮球、唱跳rap，或者一起踩坑学技术？`,
+      `欢迎光临！${timePeriod}，愿你在这里能找到一点轻松和快乐～`,
+      `${timePeriod}！我是澄思竹，一枚爱技术、爱生活的广东大学生，很高兴遇见你～`,
+      `哈喽～${timePeriod}！快来看看我的校园趣事和技术探索日记吧～`,
+      `${timePeriod}！篮球场上的热血、音乐里的温柔，都能在这里找到踪迹～`,
+      `欢迎闯进我的小天地！${timePeriod}，一起记录普通但闪光的日常～`,
+      `${timePeriod}！技术虽菜但热情满分，生活平淡却过得有滋有味，这就是我的博客～`
+    ];
+
+    const randomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+    const welcomeTextEl = document.getElementById("welcome-text");
+    if (welcomeTextEl) {
+      welcomeTextEl.innerText = randomTxt; 
+    }
+
+    function switchWelcomeText() {
+      const newRandomTxt = welcomeTextList[Math.floor(Math.random() * welcomeTextList.length)];
+      if (welcomeTextEl) {
+        welcomeTextEl.innerText = newRandomTxt;
+      }
+    }
+    setInterval(switchWelcomeText, 30000);
+  })();
+</script>
+
+<h1 id="Pocket3还是Action系列？谁才是大学生「欢迎来到我的理解」最佳选择"><a href="#Pocket3还是Action系列？谁才是大学生「欢迎来到我的理解」最佳选择" class="headerlink" title="Pocket3还是Action系列？谁才是大学生「欢迎来到我的理解」最佳选择"></a>Pocket3还是Action系列？谁才是大学生「欢迎来到我的理解」最佳选择</h1><p>作为整日穿梭在教学楼、操场、社团活动室的大学生，我们对影像记录的诉求从来都很纯粹：不用繁琐的设备、不用专业的技巧，随手拿起就能拍，既能定格课堂板书的重点、宿舍聚餐的热闹，也能记录旅行路上的风景、校园生活的点滴。纠结了大疆Pocket3和Action运动相机系列许久，上手实测近一个月，今天就以最贴合大学生的视角，聊聊这两款热门设备，到底谁才是我们的最优解。</p>
+<h2 id="开篇结论：选对不选贵，贴合需求才是王道"><a href="#开篇结论：选对不选贵，贴合需求才是王道" class="headerlink" title="开篇结论：选对不选贵，贴合需求才是王道"></a>开篇结论：选对不选贵，贴合需求才是王道</h2><p>💡 90%的普通大学生，Pocket3是绝对的首选，完美契合日常记录、校园vlog、旅行随拍的核心需求；只有重度运动爱好者，痴迷骑行、滑雪、打球、潜水等极限场景，Action系列才是你的本命设备。</p>
+<h2 id="画质与暗光表现：Pocket3完胜，适配大学生全场景出片"><a href="#画质与暗光表现：Pocket3完胜，适配大学生全场景出片" class="headerlink" title="画质与暗光表现：Pocket3完胜，适配大学生全场景出片"></a>画质与暗光表现：Pocket3完胜，适配大学生全场景出片</h2><p>对我们来说，拍得清晰、出片率高是第一要义。校园里的拍摄场景太多变了：光线充足的户外操场、灯光昏暗的阶梯教室、傍晚氛围感拉满的林荫道、深夜小吃街的烟火气，一款能适配所有光线的设备，才是真刚需。</p>
+<p>Pocket3搭载的1英寸CMOS大底传感器，直接碾压Action系列的小底配置，真正做到「底大一级压死人」。实测拍课堂PPT，放大数倍依旧字迹清晰；夜晚拍宿舍团建，不用额外补光，人物肤色自然通透，食物的色泽还原精准，几乎看不到噪点，直出画面就足够好看，发朋友圈根本不用费心调色。</p>
+<p>Action系列的画质在强光户外表现尚可，动态范围出色，拍正午的球场光影不会过曝，但短板也很明显：暗光环境下画面偏暗、噪点增多，拍教室板书会模糊，拍夜景人像更是容易脸黑。对大学生而言，我们的拍摄从不是只局限在户外，Pocket3的全场景画质适配，才是更省心的选择。</p>
+<h2 id="防抖体验：各有所长，日常记录Pocket3更顺手"><a href="#防抖体验：各有所长，日常记录Pocket3更顺手" class="headerlink" title="防抖体验：各有所长，日常记录Pocket3更顺手"></a>防抖体验：各有所长，日常记录Pocket3更顺手</h2><p>大学生拍vlog、记录生活，永远都是手持边走边拍，三脚架、稳定器根本不在我们的装备清单里，防抖效果直接决定成片质量，这两款设备的防抖思路，完全适配不同的使用场景。</p>
+<p>Pocket3自带三轴机械增稳云台，相当于相机内置了专业稳定器，不管是走路、上楼梯、赶早八的路上随手拍，还是在晃动的公交上记录窗外风景，画面都稳如开挂，丝毫没有头晕的抖动感。更重要的是机械防抖不会裁切画面，能保留完整视野，拍校园全景、集体活动都超合适，这也是它最戳大学生的亮点。</p>
+<p>Action系列主打超强电子防抖，比如Action4的360°地平线增稳，在剧烈运动时堪称无敌——拍球场快攻、骑行第一视角、滑雪俯冲，哪怕相机跟着身体大幅晃动，画面依旧能保持水平。但日常慢节奏拍摄中，它的防抖效果不如Pocket3自然，手持走路会有轻微抖动，还会牺牲少量画面视野，对非运动党来说，实用性大打折扣。</p>
+<h2 id="便携与操作：Pocket3完美适配大学生「随手拍」刚需"><a href="#便携与操作：Pocket3完美适配大学生「随手拍」刚需" class="headerlink" title="便携与操作：Pocket3完美适配大学生「随手拍」刚需"></a>便携与操作：Pocket3完美适配大学生「随手拍」刚需</h2><p>大学生的书包永远被课本、电脑、平板塞满，留给拍摄设备的空间少之又少，「小巧、轻便、易操作」这三个点，比任何参数都重要，这一局Pocket3依旧完胜。</p>
+<p>Pocket3巴掌大小，纤细的机身能直接揣进卫衣口袋、笔袋里，甚至能塞进书包侧兜，随身携带毫无负担，看到校园好看的晚霞、有趣的瞬间，能立刻掏出来开拍，完美契合「随手记录」的需求。操作上更是傻瓜式，开机即拍，一键切换拍照、录像，不用复杂设置，上课拍板书、下课拍朋友，零基础也能轻松上手。</p>
+<p>Action系列虽然也小巧，但机身偏方正厚重，放口袋里会有明显异物感，而且它的操作更偏向运动场景，部分功能需要解锁专业模式，对只想简单记录的大学生来说，反而显得繁琐。更关键的是，Action需要搭配防水壳、固定支架才能发挥优势，这些配件又会增加携带负担，完全不符合我们「轻装上阵」的校园生活。</p>
+<h2 id="续航与附加功能：满足各自定位，Pocket3更贴合创作需求"><a href="#续航与附加功能：满足各自定位，Pocket3更贴合创作需求" class="headerlink" title="续航与附加功能：满足各自定位，Pocket3更贴合创作需求"></a>续航与附加功能：满足各自定位，Pocket3更贴合创作需求</h2><p>续航方面，两款设备相差无几，满电都能支撑2-3小时的连续拍摄，日常校园记录完全够用，出门旅行带个充电宝就能轻松补电，不用过分纠结。</p>
+<p>附加功能上，Pocket3自带美颜、跟拍、全景拍摄，拍人像肤色自然不假白，拍校园vlog能自动跟拍人物，全景模式拍校园风景氛围感拉满，这些功能精准戳中大学生的创作需求；还支持竖屏拍摄，直接适配抖音、小红书的发布格式，不用后期裁剪，懒人福音。</p>
+<p>Action系列的优势则是防水、防尘、抗摔，裸机防水深度可达几十米，不怕磕碰和恶劣环境，这是Pocket3不具备的，但对普通大学生来说，这些功能几乎用不上，反而成了闲置的参数。</p>
+<!-- 极简装饰 -->
+<div style="margin:15px 0;padding:10px;background:#f5f5f5;border-radius:6px;text-align:center;">
+  <span>适合自己的，才是记录校园生活最好的「装备」～</span>
+</div>
+
+<!-- 一言随机句子组件 - 带样式适配Butterfly主题 -->
+<div id="hitokoto-container" style="
+  margin: 15px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+">
+  <div id="hitokoto-text">正在加载一句美好的话...</div>
+  <div id="hitokoto-from" style="margin-top: 8px; color: #888; font-size: 12px;"></div>
+</div>
+
+<script>
+  // 调用一言API获取随机句子
+  function getHitokoto() {
+    fetch('https://v1.hitokoto.cn/')
+      .then(response => response.json())
+      .then(data => {
+        // 填充句子内容
+        document.getElementById('hitokoto-text').innerText = `"${data.hitokoto}"`;
+        // 填充来源（如果有）
+        let fromText = data.from ? `—— ${data.from}` : '';
+        document.getElementById('hitokoto-from').innerText = fromText;
+      })
+      .catch(() => {
+        document.getElementById('hitokoto-text').innerText = "愿你今天也有好心情～";
+      });
+  }
+
+  // 页面加载时执行
+  window.onload = getHitokoto;
+  // 可选：30秒自动刷新一句
+  setInterval(getHitokoto, 30000);
+</script>]]></content>
+      <categories>
+        <category>个人推荐</category>
+      </categories>
+      <tags>
+        <tag>大学生</tag>
+        <tag>文章分享</tag>
+        <tag>大疆</tag>
+        <tag>相机</tag>
       </tags>
   </entry>
   <entry>
@@ -422,8 +540,8 @@
       </tags>
   </entry>
   <entry>
-    <title>是pokect3好还是action系列更符合 欢迎来到我的理解 我们的最佳选择</title>
-    <url>/2026/01/06/%E6%98%AFpokect3%E5%A5%BD%E8%BF%98%E6%98%AFaction%E7%B3%BB%E5%88%97%E6%9B%B4%E7%AC%A6%E5%90%88-%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E7%90%86%E8%A7%A3-%E6%88%91%E4%BB%AC%E7%9A%84%E6%9C%80%E4%BD%B3%E9%80%89%E6%8B%A9/</url>
+    <title>this is my first-博客文章-</title>
+    <url>/2025/12/23/this-is-my-first-%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div id="welcome-container" style="
   margin: 20px auto;
   padding: 15px 20px;
@@ -481,25 +599,23 @@
   })();
 </script>
 
-<h1 id="Pocket3还是Action系列？谁才是大学生「欢迎来到我的理解」最佳选择"><a href="#Pocket3还是Action系列？谁才是大学生「欢迎来到我的理解」最佳选择" class="headerlink" title="Pocket3还是Action系列？谁才是大学生「欢迎来到我的理解」最佳选择"></a>Pocket3还是Action系列？谁才是大学生「欢迎来到我的理解」最佳选择</h1><p>作为整日穿梭在教学楼、操场、社团活动室的大学生，我们对影像记录的诉求从来都很纯粹：不用繁琐的设备、不用专业的技巧，随手拿起就能拍，既能定格课堂板书的重点、宿舍聚餐的热闹，也能记录旅行路上的风景、校园生活的点滴。纠结了大疆Pocket3和Action运动相机系列许久，上手实测近一个月，今天就以最贴合大学生的视角，聊聊这两款热门设备，到底谁才是我们的最优解。</p>
-<h2 id="开篇结论：选对不选贵，贴合需求才是王道"><a href="#开篇结论：选对不选贵，贴合需求才是王道" class="headerlink" title="开篇结论：选对不选贵，贴合需求才是王道"></a>开篇结论：选对不选贵，贴合需求才是王道</h2><p>💡 90%的普通大学生，Pocket3是绝对的首选，完美契合日常记录、校园vlog、旅行随拍的核心需求；只有重度运动爱好者，痴迷骑行、滑雪、打球、潜水等极限场景，Action系列才是你的本命设备。</p>
-<h2 id="画质与暗光表现：Pocket3完胜，适配大学生全场景出片"><a href="#画质与暗光表现：Pocket3完胜，适配大学生全场景出片" class="headerlink" title="画质与暗光表现：Pocket3完胜，适配大学生全场景出片"></a>画质与暗光表现：Pocket3完胜，适配大学生全场景出片</h2><p>对我们来说，拍得清晰、出片率高是第一要义。校园里的拍摄场景太多变了：光线充足的户外操场、灯光昏暗的阶梯教室、傍晚氛围感拉满的林荫道、深夜小吃街的烟火气，一款能适配所有光线的设备，才是真刚需。</p>
-<p>Pocket3搭载的1英寸CMOS大底传感器，直接碾压Action系列的小底配置，真正做到「底大一级压死人」。实测拍课堂PPT，放大数倍依旧字迹清晰；夜晚拍宿舍团建，不用额外补光，人物肤色自然通透，食物的色泽还原精准，几乎看不到噪点，直出画面就足够好看，发朋友圈根本不用费心调色。</p>
-<p>Action系列的画质在强光户外表现尚可，动态范围出色，拍正午的球场光影不会过曝，但短板也很明显：暗光环境下画面偏暗、噪点增多，拍教室板书会模糊，拍夜景人像更是容易脸黑。对大学生而言，我们的拍摄从不是只局限在户外，Pocket3的全场景画质适配，才是更省心的选择。</p>
-<h2 id="防抖体验：各有所长，日常记录Pocket3更顺手"><a href="#防抖体验：各有所长，日常记录Pocket3更顺手" class="headerlink" title="防抖体验：各有所长，日常记录Pocket3更顺手"></a>防抖体验：各有所长，日常记录Pocket3更顺手</h2><p>大学生拍vlog、记录生活，永远都是手持边走边拍，三脚架、稳定器根本不在我们的装备清单里，防抖效果直接决定成片质量，这两款设备的防抖思路，完全适配不同的使用场景。</p>
-<p>Pocket3自带三轴机械增稳云台，相当于相机内置了专业稳定器，不管是走路、上楼梯、赶早八的路上随手拍，还是在晃动的公交上记录窗外风景，画面都稳如开挂，丝毫没有头晕的抖动感。更重要的是机械防抖不会裁切画面，能保留完整视野，拍校园全景、集体活动都超合适，这也是它最戳大学生的亮点。</p>
-<p>Action系列主打超强电子防抖，比如Action4的360°地平线增稳，在剧烈运动时堪称无敌——拍球场快攻、骑行第一视角、滑雪俯冲，哪怕相机跟着身体大幅晃动，画面依旧能保持水平。但日常慢节奏拍摄中，它的防抖效果不如Pocket3自然，手持走路会有轻微抖动，还会牺牲少量画面视野，对非运动党来说，实用性大打折扣。</p>
-<h2 id="便携与操作：Pocket3完美适配大学生「随手拍」刚需"><a href="#便携与操作：Pocket3完美适配大学生「随手拍」刚需" class="headerlink" title="便携与操作：Pocket3完美适配大学生「随手拍」刚需"></a>便携与操作：Pocket3完美适配大学生「随手拍」刚需</h2><p>大学生的书包永远被课本、电脑、平板塞满，留给拍摄设备的空间少之又少，「小巧、轻便、易操作」这三个点，比任何参数都重要，这一局Pocket3依旧完胜。</p>
-<p>Pocket3巴掌大小，纤细的机身能直接揣进卫衣口袋、笔袋里，甚至能塞进书包侧兜，随身携带毫无负担，看到校园好看的晚霞、有趣的瞬间，能立刻掏出来开拍，完美契合「随手记录」的需求。操作上更是傻瓜式，开机即拍，一键切换拍照、录像，不用复杂设置，上课拍板书、下课拍朋友，零基础也能轻松上手。</p>
-<p>Action系列虽然也小巧，但机身偏方正厚重，放口袋里会有明显异物感，而且它的操作更偏向运动场景，部分功能需要解锁专业模式，对只想简单记录的大学生来说，反而显得繁琐。更关键的是，Action需要搭配防水壳、固定支架才能发挥优势，这些配件又会增加携带负担，完全不符合我们「轻装上阵」的校园生活。</p>
-<h2 id="续航与附加功能：满足各自定位，Pocket3更贴合创作需求"><a href="#续航与附加功能：满足各自定位，Pocket3更贴合创作需求" class="headerlink" title="续航与附加功能：满足各自定位，Pocket3更贴合创作需求"></a>续航与附加功能：满足各自定位，Pocket3更贴合创作需求</h2><p>续航方面，两款设备相差无几，满电都能支撑2-3小时的连续拍摄，日常校园记录完全够用，出门旅行带个充电宝就能轻松补电，不用过分纠结。</p>
-<p>附加功能上，Pocket3自带美颜、跟拍、全景拍摄，拍人像肤色自然不假白，拍校园vlog能自动跟拍人物，全景模式拍校园风景氛围感拉满，这些功能精准戳中大学生的创作需求；还支持竖屏拍摄，直接适配抖音、小红书的发布格式，不用后期裁剪，懒人福音。</p>
-<p>Action系列的优势则是防水、防尘、抗摔，裸机防水深度可达几十米，不怕磕碰和恶劣环境，这是Pocket3不具备的，但对普通大学生来说，这些功能几乎用不上，反而成了闲置的参数。</p>
-<!-- 极简装饰 -->
-<div style="margin:15px 0;padding:10px;background:#f5f5f5;border-radius:6px;text-align:center;">
-  <span>适合自己的，才是记录校园生活最好的「装备」～</span>
-</div>
 
+<h1 id="我的第一篇博客文章：开启记录生活的新旅程"><a href="#我的第一篇博客文章：开启记录生活的新旅程" class="headerlink" title="我的第一篇博客文章：开启记录生活的新旅程"></a>我的第一篇博客文章：开启记录生活的新旅程</h1><p>今天是2025年的平安夜，终于搭好了自己的个人博客，这是我的第一篇文章。</p>
+<p>其实想写博客的念头已经存在很久了——总觉得生活里有很多值得记录的瞬间：比如偶然发现的一首好歌、踩坑后搞定的一个小技术问题、或是某个突然想通的生活感悟。以前习惯存在备忘录里，但总觉得少了点「分享」的温度，于是干脆搭了个博客，把这些碎片都好好存起来。</p>
+<h2 id="为什么要写博客？"><a href="#为什么要写博客？" class="headerlink" title="为什么要写博客？"></a>为什么要写博客？</h2><p>对我来说，写博客的意义大概有三个：</p>
+<ol>
+<li><strong>记录成长</strong>：把学到的知识、踩过的坑写成文字，既是梳理也是沉淀；</li>
+<li><strong>保持输出</strong>：强迫自己把想法落地成文字，避免「想过即会过」的惰性；</li>
+<li><strong>连接同频的人</strong>：如果我的文字能给某个陌生人一点启发，那就是意外的惊喜啦~</li>
+</ol>
+<h2 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h2><p>这个博客是用Hexo+Butterfly主题搭的，虽然过程中踩了不少坑（比如评论功能折腾了好久），但看到最终成型的页面时，还是挺有成就感的。</p>
+<p>后续这里会更新什么内容呢？大概是：</p>
+<ul>
+<li>生活日常的碎碎念；</li>
+<li>偶尔的技术学习笔记；</li>
+<li>看过的书、听过的歌、去过的地方的分享。</li>
+</ul>
+<p>最后，希望这个小小的博客能陪我走得久一点~ 也欢迎看到这篇文章的你，在评论区留下你的脚印<del>（虽然评论区暂时还没有搞定（会搞定的哈</del>））</p>
 <!-- 一言随机句子组件 - 带样式适配Butterfly主题 -->
 <div id="hitokoto-container" style="
   margin: 15px 0;
@@ -537,13 +653,11 @@
   setInterval(getHitokoto, 30000);
 </script>]]></content>
       <categories>
-        <category>个人推荐</category>
+        <category>生活记录</category>
       </categories>
       <tags>
-        <tag>文章分享</tag>
-        <tag>大学生</tag>
-        <tag>大疆</tag>
-        <tag>相机</tag>
+        <tag>博客初体验</tag>
+        <tag>个人成长</tag>
       </tags>
   </entry>
 </search>
